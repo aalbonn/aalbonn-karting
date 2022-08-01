@@ -11,8 +11,8 @@
  * <a href="https://github.com/qbcore-framework/LegacyFuel">LegacyFuel</a>
 
 
-Add This To qb-core > shared > jobs.lua
-
+ Add This To qb-core > shared > jobs.lua
+```
 ['karting'] = {
     label = 'Karting',
     defaultDuty = true,
@@ -29,17 +29,20 @@ Add This To qb-core > shared > jobs.lua
         },
     },
 },
+```
 
 Go to qb-managment cl_config.lua file and add this 
+```
     ['karting'] = {
         { coords = vector3(-159.17, -2128.2, 16.72), length = 1.75, width = 0.5, heading = 290.0, minZ = 16.0, maxZ = 17.0 },
     },
+```
 inside of Config.BossMenuZones = { 
 
 and execute or import this into your database
-
+```
 INSERT INTO `management_funds` (`job_name`, `amount`, `type`) VALUES
 ('karting', 1000, 'boss');
-
+```
 
 Map: https://forum.cfx.re/uploads/short-url/mG2RdkXTckktnR0wJAcfaFiKY4v.rar
