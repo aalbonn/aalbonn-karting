@@ -1,8 +1,8 @@
-### Basic KartingJob for QBCore
+# Basic KartingJob for QBCore
 
 <a href="https://youtu.be/NOAljX6BezE">Preview</a>
 
-# Dependencies
+### Dependencies
  
  * <a href="https://github.com/qbcore-framework/qb-target">qb-target</a>
 
