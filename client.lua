@@ -9,6 +9,8 @@ BlipLocations = {
     }
 }
 
+FuelScript = 'lj-fuel' --change to lj-fuel / ps-fuel if you use lj-fuel / ps-fuel or something else if you use any other LegcyFuel compatible script
+
 CreateThread(function()
     for _, value in pairs(BlipLocations) do
         local blip = AddBlipForCoord(value.coords.x, value.coords.y, value.coords.z)
@@ -30,7 +32,11 @@ RegisterNetEvent('aalbonn-kart:SpawnVeto', function()
         SetEntityHeading(veh, coords.w)
         TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
         TriggerEvent('vehiclekeys:client:SetOwner', QBCore.Functions.GetPlate(veh))
-        exports['LegacyFuel']:SetFuel(veh, 100.0)
+        if FuelScript then
+            exports[FuelScript]:SetFuel(veh, 100)
+        else
+            exports['LegacyFuel']:SetFuel(veh, 100) 
+        end
         SetVehicleEngineOn(veh, true, true)
     end, coords, true)
 end)
@@ -43,7 +49,11 @@ RegisterNetEvent('aalbonn-kart:SpawnVeto2', function()
         SetEntityHeading(veh, coords.w)
         TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
         TriggerEvent('vehiclekeys:client:SetOwner', QBCore.Functions.GetPlate(veh))
-        exports['LegacyFuel']:SetFuel(veh, 100.0)
+        if FuelScript then
+            exports[FuelScript]:SetFuel(veh, 100)
+        else
+            exports['LegacyFuel']:SetFuel(veh, 100) 
+        end
         SetVehicleEngineOn(veh, true, true)
     end, coords, true)
 end)
