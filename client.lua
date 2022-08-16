@@ -1,5 +1,7 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
+FuelScript = 'LegacyFuel' --change this to your fuel script export / ps-fuel / lj-fuel / ps-fuel
+
 BlipLocations = {
     [1] = {
         coords = vector3(-163.53, -2130.0, 16.7),
@@ -8,8 +10,6 @@ BlipLocations = {
         color = 2,
     }
 }
-
-FuelScript = 'LegacyFuel' --change this to your fuel script export / ps-fuel / lj-fuel / ps-fuel
 
 CreateThread(function()
     for _, value in pairs(BlipLocations) do
