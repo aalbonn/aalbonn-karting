@@ -1,5 +1,7 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
+FuelScript = 'LegacyFuel' --change this to your fuel script export / ps-fuel / lj-fuel / ps-fuel
+
 BlipLocations = {
     [1] = {
         coords = vector3(-163.53, -2130.0, 16.7),
@@ -30,7 +32,7 @@ RegisterNetEvent('aalbonn-kart:SpawnVeto', function()
         SetEntityHeading(veh, coords.w)
         TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
         TriggerEvent('vehiclekeys:client:SetOwner', QBCore.Functions.GetPlate(veh))
-        exports['LegacyFuel']:SetFuel(veh, 100.0)
+        exports[FuelScript]:SetFuel(veh, 100.0)
         SetVehicleEngineOn(veh, true, true)
     end, coords, true)
 end)
@@ -43,7 +45,7 @@ RegisterNetEvent('aalbonn-kart:SpawnVeto2', function()
         SetEntityHeading(veh, coords.w)
         TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
         TriggerEvent('vehiclekeys:client:SetOwner', QBCore.Functions.GetPlate(veh))
-        exports['LegacyFuel']:SetFuel(veh, 100.0)
+        exports[FuelScript]:SetFuel(veh, 100.0)
         SetVehicleEngineOn(veh, true, true)
     end, coords, true)
 end)
